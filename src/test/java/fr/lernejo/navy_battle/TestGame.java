@@ -20,7 +20,7 @@ public class TestGame {
 
     @Test
     void fire() throws IOException {
-        Serveur s = new Serveur("9876");
+        Serveur s = new Serveur("1235");
         Game g = new Game(s);
         g.Fire();
     }
