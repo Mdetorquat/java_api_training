@@ -1,4 +1,4 @@
-package fr.lernejo.navy_battle;
+package fr.lernejo.navy_battle.navy_battle;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +14,7 @@ public class Game {
         hit
     }
 
-    final Serveur serveur;
+    public final Serveur serveur;
     final EndGame shoot;
     final Pattern pattern = Pattern.compile("^[A-J](10|[1-9])$");
     final Board init;
@@ -22,7 +22,7 @@ public class Game {
     public final boolean[] inGame;
 
     // Constructeur du jeu
-    Game(Serveur serveur) {
+    public Game(Serveur serveur) {
         this.serveur = serveur;
         shoot = new EndGame(this);
         init = new Board();

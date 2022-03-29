@@ -1,9 +1,9 @@
-package fr.lernejo.navy_battle;
+package fr.lernejo.navy_battle.navy_battle;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
-import fr.lernejo.navy_battle.handlers.HandlerRequests;
+import fr.lernejo.navy_battle.navy_battle.handlers.HandlerRequests;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -18,7 +18,7 @@ public class Serveur {
     final int port;
     public final String url;
     public final String[] strings;
-    final HttpServer serveur;
+    public final HttpServer serveur;
     final HandlerRequests requests;
     public final Game game;
 
@@ -67,7 +67,7 @@ public class Serveur {
 
     final HttpHandler defaut = httpExchange -> htmlForm(httpExchange, 404);
 
-    Serveur(String port) throws IOException {
+    public Serveur(String port) throws IOException {
         this.port = Integer.parseInt(port);
         url = String.format("http://localhost:%s", port);
         Executor thread = Executors.newFixedThreadPool(1);

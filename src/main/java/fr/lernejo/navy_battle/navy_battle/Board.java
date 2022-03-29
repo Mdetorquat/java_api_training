@@ -1,4 +1,4 @@
-package fr.lernejo.navy_battle;
+package fr.lernejo.navy_battle.navy_battle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ public class Board {
     final int[] ships = new int[]{5, 4, 3, 3, 2};
     final Random rand;
 
-    Board() {
+    public Board() {
         rand = new Random();
     }
 

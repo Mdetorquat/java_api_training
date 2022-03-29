@@ -1,8 +1,8 @@
-package fr.lernejo.navy_battle.handlers;
+package fr.lernejo.navy_battle.navy_battle.handlers;
 
 import com.sun.net.httpserver.HttpExchange;
-import fr.lernejo.navy_battle.Game;
-import fr.lernejo.navy_battle.Serveur;
+import fr.lernejo.navy_battle.navy_battle.Game;
+import fr.lernejo.navy_battle.navy_battle.Serveur;
 
 import java.io.BufferedReader;
 import java.io.IOException;

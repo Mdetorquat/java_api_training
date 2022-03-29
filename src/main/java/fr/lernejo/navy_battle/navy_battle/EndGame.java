@@ -1,4 +1,4 @@
-package fr.lernejo.navy_battle;
+package fr.lernejo.navy_battle.navy_battle;
 
 import java.net.URI;
 import java.net.http.HttpClient;

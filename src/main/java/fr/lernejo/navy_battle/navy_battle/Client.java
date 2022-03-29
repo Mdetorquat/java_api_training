@@ -1,4 +1,4 @@
-package fr.lernejo.navy_battle;
+package fr.lernejo.navy_battle.navy_battle;
 
 import java.io.IOException;
 import java.net.URI;
@@ -13,7 +13,7 @@ public class Client {
     final String url;
 
     // Constructeur
-    Client(Serveur s, String url) throws URISyntaxException {
+    public Client(Serveur s, String url) throws URISyntaxException {
         serveur = s;
         this.url = url;
     }
