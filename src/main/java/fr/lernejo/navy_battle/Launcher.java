@@ -1,37 +1,25 @@
 package fr.lernejo.navy_battle;
 
-import com.sun.net.httpserver.HttpServer;
-import fr.lernejo.navy_battle.handlers.CallHandler;
-
 import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.net.URISyntaxException;
 
 public class Launcher {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException {
+        Serveur serveur;
         if (args.length < 1 || args.length > 2) {
-            throw new IllegalArgumentException("Il ne peut y avoir que 1 ou 2 arguments !");
+            System.out.println("Veuillez spécifier le port d'écoute");
+            System.exit(1);
         }
-        else
-        {
-            int port = Integer.parseInt(args[0]);
-            if (args.length == 1) {
-                serverStart(port);
-            }
-
+        try {
+            serveur = new Serveur(args[0]);
             if (args.length == 2) {
-                //
+                Client client = new Client(serveur, args[1]);
+                client.clientConnect();
             }
-
+        } catch (IOException | URISyntaxException | InterruptedException e) {
+            System.out.println("Not an Integer");
+            throw e;
         }
-    }
-
-    public static HttpServer serverStart(int port) throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
-        ExecutorService executorService = Executors.newFixedThreadPool(1);
-        server.createContext("/ping", new CallHandler());
-        return server;
     }
 }
