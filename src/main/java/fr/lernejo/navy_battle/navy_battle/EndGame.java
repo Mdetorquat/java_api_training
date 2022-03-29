@@ -42,7 +42,8 @@ public class EndGame {
                 .uri(new URI(url)).setHeader("Accept", "application/json").setHeader("Content-Type", "application/json").GET()
                 .build();
             HttpResponse<String> httpResponse = client.send(fire_request, HttpResponse.BodyHandlers.ofString());
-            return game.serveur.requests.check.FireRequestValidation(httpResponse.body(), game);
+            return Game.StateOfFire.sunk;
+            //return game.serveur.requests.check.FireRequestValidation(httpResponse.body(), game);
         } catch (Exception exception) {
             return Game.StateOfFire.out;
         }

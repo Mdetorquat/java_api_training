@@ -13,11 +13,9 @@ import java.nio.charset.StandardCharsets;
 public class HandlerRequests {
 
     final Serveur serveur;
-    //public final CheckRequests check;
 
     public HandlerRequests(Serveur s) {
         serveur = s;
-        //check = new CheckRequests();
     }
 
 
@@ -55,8 +53,6 @@ public class HandlerRequests {
     public void HandlerStart(HttpExchange httpExchange, boolean test) throws IOException, InterruptedException {
         try {
             String body = RequestBody(httpExchange);
-            //String server_url = check.StartRequestValidation(body);
-            //serveur.strings[0] = server_url;
         } catch (Exception e) {
             serveur.htmlForm(httpExchange, 400);
         }
